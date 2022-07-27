@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="licensing-sevice" />
+        <module name="configuration-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="configuration-server" target="17" />
       <module name="licensing-sevice" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="configuration-server" options="-parameters" />
       <module name="licensing-sevice" options="-parameters" />
     </option>
   </component>

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/O-stock.iml" filepath="$PROJECT_DIR$/O-stock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration-server/configuration-server.iml" filepath="$PROJECT_DIR$/configuration-server/configuration-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/licensing-sevice/licensing-sevice.iml" filepath="$PROJECT_DIR$/licensing-sevice/licensing-sevice.iml" />
     </modules>
   </component>
