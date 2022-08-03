@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  monitoring-service:
+    build: monitoring-service/
+    container_name: monitoring-service
+    ports:
+      - 8000:8000
+  configuration-server:
+    build: configuration-server/
+    container_name: configuration-server
+    ports:
+      - 8071:8071
+    depends_on:
+      - monitoring-service
+    network_mode: host
+
