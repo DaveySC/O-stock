@@ -25,7 +25,9 @@ management:
 
 ---
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: ubun
   boot:
     admin:
       client:

@@ -45,23 +45,16 @@ public class LicenseService {
     public License createLicense(License license){
         license.setLicenseId(UUID.randomUUID().toString());
         licenseRepository.save(license);
-
         return license.withComment(config.getProperty());
     }
 
     public License updateLicense(License license){
         licenseRepository.save(license);
-
         return license.withComment(config.getProperty());
     }
 
     public String deleteLicense(String licenseId){
-        String responseMessage = null;
-        License license = new License();
-        license.setLicenseId(licenseId);
-        licenseRepository.delete(license);
-        responseMessage = String.format(messages.getMessage("license.delete.message", null, null),licenseId);
-        return responseMessage;
-
+        licenseRepository.deleteById(licenseId);
+        return  String.format(messages.getMessage("license.delete.message", null, null),licenseId);
     }
 }
