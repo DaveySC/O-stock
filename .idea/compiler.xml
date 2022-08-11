@@ -7,21 +7,27 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="monitoring-service" />
+        <module name="organization-service" />
         <module name="licensing-sevice" />
+        <module name="eureka-server" />
         <module name="configuration-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configuration-server" target="17" />
+      <module name="eureka-server" target="17" />
       <module name="licensing-sevice" target="17" />
       <module name="monitoring-service" target="17" />
+      <module name="organization-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configuration-server" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="licensing-sevice" options="-parameters" />
       <module name="monitoring-service" options="-parameters" />
+      <module name="organization-service" options="-parameters" />
     </option>
   </component>
 </project>
