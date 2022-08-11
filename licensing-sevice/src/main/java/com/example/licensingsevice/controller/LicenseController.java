@@ -21,7 +21,7 @@ public class LicenseController {
         this.licenseService = licenseService;
     }
 
-    @RequestMapping(value="/{licenseId}",method = RequestMethod.GET)
+    @GetMapping(value="/{licenseId}")
     public ResponseEntity<License> getLicense( @PathVariable("organizationId") String organizationId,
                                                @PathVariable("licenseId") String licenseId) {
 
@@ -49,5 +49,14 @@ public class LicenseController {
     @DeleteMapping(value="/{licenseId}")
     public ResponseEntity<String> deleteLicense(@PathVariable("licenseId") String licenseId) {
         return ResponseEntity.ok(licenseService.deleteLicense(licenseId));
+    }
+
+    @GetMapping(value="/{licenseId}/{clientType}")
+    public License getLicensesWithClient(
+            @PathVariable("organizationId") String organizationId,
+            @PathVariable("licenseId") String licenseId,
+            @PathVariable("clientType") String clientType) {
+        return licenseService.getLicense(organizationId,
+                licenseId, clientType);
     }
 }

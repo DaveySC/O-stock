@@ -1,18 +1,16 @@
 package com.example.licensingsevice.repository;
 
 import com.example.licensingsevice.model.License;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface LicenseRepository  extends CrudRepository<License,String> {
+public interface LicenseRepository  extends JpaRepository<License,String> {
 
-     List<License> findByOrganizationId
-            (String organizationId);
+     List<License> findByOrganizationId(String organizationId);
 
-     License findByOrganizationIdAndLicenseId
-            (String organizationId,
-             String licenseId);
+     License findByOrganizationIdAndLicenseId(String organizationId, String licenseId);
 }

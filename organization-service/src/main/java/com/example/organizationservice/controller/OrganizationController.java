@@ -24,12 +24,13 @@ public class OrganizationController {
     }
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateOrganization( @PathVariable("organizationId") String id, @RequestBody Organization organization) {
         service.update(organization);
     }
 
     @PostMapping
-    public ResponseEntity<Organization>  saveOrganization(@RequestBody Organization organization) {
+    public ResponseEntity<Organization> saveOrganization(@RequestBody Organization organization) {
         return ResponseEntity.ok(service.create(organization));
     }
 
