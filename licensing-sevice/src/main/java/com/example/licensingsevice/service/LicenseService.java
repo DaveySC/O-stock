@@ -119,7 +119,7 @@ public class LicenseService {
         return organization;
     }
 
-    @CircuitBreaker(name = "licenseService")
+
     public List<License> getLicensesByOrganization(String organizationId) throws TimeoutException {
         randomlyRunLong();
         return licenseRepository.findByOrganizationId(organizationId);
