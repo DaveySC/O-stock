@@ -9,7 +9,7 @@ import org.springframework.hateoas.RepresentationModel;
 @Setter
 @ToString
 public class Organization extends RepresentationModel<Organization> {
-    Integer id;
+    String id;
     String name;
     String contactName;
     String contactEmail;

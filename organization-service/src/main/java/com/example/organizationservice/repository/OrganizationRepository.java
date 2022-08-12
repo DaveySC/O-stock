@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface OrganizationRepository extends JpaRepository<Organization,Integer> {
-
+public interface OrganizationRepository extends JpaRepository<Organization,String> {
+     Optional<Organization> findById(String organizationId);
 }
